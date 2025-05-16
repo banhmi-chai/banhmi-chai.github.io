@@ -18,18 +18,6 @@
       color: #333;
     }
 
-/*     header {
-      font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      text-align: center;
-      padding: 1.5em 1em;
-      background: white;
-      border-bottom: 1px solid #e5e5e5;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    } */
     header {
       font-family: 'Playfair Display', serif;
       font-size: 3em;
@@ -41,7 +29,7 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+    }
 
     .nav {
       text-align: center;
@@ -101,14 +89,6 @@
       animation: fadeIn 1.5s ease forwards;
     }
 
-/*     .chapter img {
-      width: 100%;
-      margin-bottom: 1.5em;
-      border-radius: 8px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease;
-    } */
-    
     .chapter img {
       width: 80%;
       max-width: 600px;
@@ -118,7 +98,6 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease;
     }
-
 
     .chapter img:hover {
       transform: scale(1.01);
@@ -196,15 +175,21 @@
   <header>P&T Story</header>
 
   <div class="nav">
-    <button onclick="showChapter(0)" class="active">Prologue</button>
-    <button onclick="showChapter(1)">Chapter 1</button>
-    <button onclick="showChapter(2)">Chapter 2</button>
-    <button onclick="showChapter(3)">Bonus</button>
+    <button onclick="showChapter(0)" class="active">Cover</button>
+    <button onclick="showChapter(1)">Prologue</button>
+    <button onclick="showChapter(2)">Chapter 1</button>
+    <button onclick="showChapter(3)">Chapter 2</button>
+    <button onclick="showChapter(4)">Bonus</button>
     <button onclick="showAbout()">About</button>
   </div>
 
   <div id="chapters">
     <div class="chapter active">
+      <img src="chapters/cover/cover_1.png" alt="Cover">
+      <div class="chapter-end">– begin –</div>
+    </div>
+
+    <div class="chapter">
       <div class="quote-box">Our paths would always seem to cross</div>
       <img src="chapters/prologue/pro_1.png" alt="">
       <img src="chapters/prologue/pro_2.png" alt="">
@@ -234,14 +219,14 @@
       <img src="chapters/chap2/ch2_5.png" alt="">
       <div class="chapter-end">– to be continue –</div>
     </div>
-  </div>
 
-  <div class="chapter">
-  <div class="quote-box">🌻 Moments that hopscotch through my mind 🌻</div>
-    <img src="chapters/bonus/bonus_1.png" alt="">
-    <img src="chapters/bonus/bonus_2.png" alt="">
-    <img src="chapters/bonus/bonus_3.png" alt="">
-  <div class="chapter-end">– bonus complete –</div>
+    <div class="chapter">
+      <div class="quote-box">🌻</div>
+      <img src="chapters/bonus/bonus_1.png" alt="">
+      <img src="chapters/bonus/bonus_2.png" alt="">
+      <img src="chapters/bonus/bonus_3.png" alt="">
+      <div class="chapter-end">– bonus complete –</div>
+    </div>
   </div>
 
   <div id="about">
@@ -258,50 +243,32 @@
   <button id="backToTop" onclick="scrollToTop()" title="Back to top">❤️</button>
 
   <script>
-    function showAbout() {
-      const chapters = document.querySelectorAll('.chapter');
-      const buttons = document.querySelectorAll('.nav button');
-    
-      // Hide all chapters
-      chapters.forEach(el => el.classList.remove('active'));
-    
-      // Show about section
-      document.getElementById("about").style.display = "block";
-    
-      // Reset all buttons
-      buttons.forEach(btn => btn.classList.remove('active'));
-    
-      // Set About button as active (5th button, index 4)
-      if (buttons[4]) buttons[4].classList.add('active');
-
-      scrollToTop();
+    function clearActiveStates() {
+      document.querySelectorAll('.chapter').forEach(el => el.classList.remove('active'));
+      document.getElementById('about').style.display = 'none';
+      document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
     }
 
     function showChapter(index) {
-        document.getElementById("about").style.display = "none";
-      
-        const chapters = document.querySelectorAll('.chapter');
-        const buttons = document.querySelectorAll('.nav button');
-      
-        // Hide all chapters and reset all button styles
-        chapters.forEach(el => el.classList.remove('active'));
-        buttons.forEach(btn => btn.classList.remove('active'));
-      
-        // Show the selected chapter and activate its button
-        if (chapters[index]) chapters[index].classList.add('active');
-        if (buttons[index]) buttons[index].classList.add('active');
-      
-        scrollToTop();
-}
+      clearActiveStates();
+      const chapters = document.querySelectorAll('.chapter');
+      const buttons = document.querySelectorAll('.nav button');
+      if (chapters[index]) chapters[index].classList.add('active');
+      if (buttons[index]) buttons[index].classList.add('active');
+      scrollToTop();
+    }
 
+    function showAbout() {
+      clearActiveStates();
+      document.getElementById("about").style.display = "block";
+      const buttons = document.querySelectorAll('.nav button');
+      if (buttons[buttons.length - 1]) buttons[buttons.length - 1].classList.add('active');
+      scrollToTop();
+    }
 
     window.onscroll = function () {
       const btn = document.getElementById("backToTop");
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        btn.style.display = "block";
-      } else {
-        btn.style.display = "none";
-      }
+      btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
     };
 
     function scrollToTop() {
