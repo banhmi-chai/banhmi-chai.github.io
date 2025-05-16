@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex">
+  <title>P&T Story</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+      color: #333;
+    }
+
+/*     header {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      text-align: center;
+      padding: 1.5em 1em;
+      background: white;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    } */
+    header {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      text-align: center;
+      padding: 0.7em 0.5em;
+      background: white;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+    .nav {
+      text-align: center;
+      padding: 1em 0 0.5em;
+      background: white;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 80px;
+      z-index: 999;
+    }
+
+    .nav button {
+      background: white;
+      border: 1px solid #ccc;
+      margin: 0 8px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 1em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .nav button:hover {
+      background: #333;
+      color: white;
+      border-color: #333;
+    }
+
+    .nav button.active {
+      background: #333;
+      color: white;
+      border-color: #333;
+    }
+
+    .chapter {
+      display: none;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2em 1em;
+    }
+
+    .chapter.active {
+      display: block;
+    }
+
+    .quote-box {
+      font-style: italic;
+      font-family: Georgia, serif;
+      font-size: 1.3em;
+      color: #555;
+      text-align: center;
+      margin-bottom: 2em;
+      padding: 0 1em;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+/*     .chapter img {
+      width: 100%;
+      margin-bottom: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    } */
+    
+    .chapter img {
+      width: 80%;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+
+    .chapter img:hover {
+      transform: scale(1.01);
+    }
+
+    .chapter-end {
+      text-align: center;
+      font-style: italic;
+      color: #888;
+      margin-top: 2em;
+      font-size: 1em;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    #about {
+      display: none;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2em 1em;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    #about h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 9999;
+      transition: transform 0.2s ease;
+    }
+
+    #backToTop:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9em;
+      margin: 3em 0 2em;
+    }
+
+    @media (max-width: 600px) {
+      .nav button {
+        margin: 6px 4px;
+        padding: 8px 14px;
+        font-size: 0.9em;
+      }
+
+      header {
+        font-size: 1.6em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>P&T Story</header>
+
+  <div class="nav">
+    <button onclick="showChapter(0)" class="active">Prologue</button>
+    <button onclick="showChapter(1)">Chapter 1</button>
+    <button onclick="showChapter(2)">Chapter 2</button>
+    <button onclick="showAbout()">About</button>
+  </div>
+
+  <div id="chapters">
+    <div class="chapter active">
+      <div class="quote-box">You were always at the end of the road</div>
+      <img src="chapters/prologue/pro_1.png" alt="">
+      <img src="chapters/prologue/pro_2.png" alt="">
+      <img src="chapters/prologue/pro_3.png" alt="">
+      <img src="chapters/prologue/pro_4.png" alt="">    
+      <img src="chapters/prologue/pro_5.png" alt="">
+      <div class="chapter-end">– end –</div>
+    </div>
+
+    <div class="chapter">
+      <div class="quote-box">It was you all along</div>
+      <img src="chapters/chap1/ch1_1.png" alt="">
+      <img src="chapters/chap1/ch1_2.png" alt="">
+      <img src="chapters/chap1/ch1_3.png" alt="">
+      <img src="chapters/chap1/ch1_4.png" alt="">
+      <img src="chapters/chap1/ch1_5.png" alt="">
+      <img src="chapters/chap1/ch1_6.png" alt="">
+      <div class="chapter-end">– end –</div>
+    </div>
+
+    <div class="chapter">
+      <div class="quote-box">Suddenly, your happiness became mine too</div>
+      <img src="chapters/chap2/ch2_1.png" alt="">
+      <img src="chapters/chap2/ch2_2.png" alt="">
+      <img src="chapters/chap2/ch2_3.png" alt="">
+      <img src="chapters/chap2/ch2_4.png" alt="">
+      <img src="chapters/chap2/ch2_5.png" alt="">
+      <div class="chapter-end">– to be continue –</div>
+    </div>
+  </div>
+
+  <div id="about">
+    <h2>About This Story</h2>
+    <p><strong>P&T Story</strong> is a gentle, heartfelt visual journey through connection, distance, and the quiet moments that define love.
+      Each chapter is based on shared memories — stitched together through everyday magic: walking to campus, shared meals, surprise visits, and long-distance calls.</p>
+    <p>Created with love, this site was built to cherish those little memories that become unforgettable when shared with someone special.</p>
+    <p>P.S. Forever and always, I love you.</p>
+    <p style="text-align:center; margin-top: 2em; font-style: italic; color: #888;">– Thank you for reading –</p>
+  </div>
+
+  <footer>© 2025 P&T</footer>
+
+  <button id="backToTop" onclick="scrollToTop()" title="Back to top">❤️</button>
+
+  <script>
+    function showChapter(index) {
+      document.getElementById("about").style.display = "none";
+
+      const chapters = document.querySelectorAll('.chapter');
+      const buttons = document.querySelectorAll('.nav button');
+
+      chapters.forEach((el, i) => {
+        el.classList.toggle('active', i === index);
+        if (buttons[i]) buttons[i].classList.toggle('active', i === index);
+      });
+
+      if (buttons[3]) buttons[3].classList.remove('active');
+      scrollToTop();
+    }
+
+    function showAbout() {
+      const chapters = document.querySelectorAll('.chapter');
+      const buttons = document.querySelectorAll('.nav button');
+
+      chapters.forEach(el => el.classList.remove('active'));
+      document.getElementById("about").style.display = "block";
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (buttons[3]) buttons[3].classList.add('active');
+
+      scrollToTop();
+    }
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
