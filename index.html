@@ -272,24 +272,23 @@
       scrollToTop();
     }
 
-    function showAbout() {
-      const chapters = document.querySelectorAll('.chapter');
-      const buttons = document.querySelectorAll('.nav button');
-    
-      // Hide all chapters
-      chapters.forEach(el => el.classList.remove('active'));
-    
-      // Show about section
-      document.getElementById("about").style.display = "block";
-    
-      // Reset all buttons
-      buttons.forEach(btn => btn.classList.remove('active'));
-    
-      // Set About button as active (5th button, index 4)
-      if (buttons[4]) buttons[4].classList.add('active');
-
-      scrollToTop();
+    function showChapter(index) {
+        document.getElementById("about").style.display = "none";
+      
+        const chapters = document.querySelectorAll('.chapter');
+        const buttons = document.querySelectorAll('.nav button');
+      
+        // Hide all chapters and reset all button styles
+        chapters.forEach(el => el.classList.remove('active'));
+        buttons.forEach(btn => btn.classList.remove('active'));
+      
+        // Show the selected chapter and activate its button
+        if (chapters[index]) chapters[index].classList.add('active');
+        if (buttons[index]) buttons[index].classList.add('active');
+      
+        scrollToTop();
 }
+
 
     window.onscroll = function () {
       const btn = document.getElementById("backToTop");
