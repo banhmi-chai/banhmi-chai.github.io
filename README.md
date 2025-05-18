@@ -1,4 +1,4 @@
-# 🥖 Banh Mi & Chai ☕︎ 
+# 🥖 Banh Mi & Chai 🍵
 
 A quiet little story told in comic strips —  
 about the walks, the long calls,  
