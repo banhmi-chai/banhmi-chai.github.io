@@ -1,4 +1,4 @@
-# Bánh mì & Chai 
+# Bánh Mì & Chai 
 
 A quiet little story told in comic strips —  
 about the walks, the long calls,  
