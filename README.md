@@ -10,4 +10,4 @@ Made with care, for someone special.
 With ♡,  
 **🥖 → ☕** 
 
-*Init 05/15/2025*
+<img src="https://github.com/banhmi-chai/banhmi-chai.github.io/blob/main/chapters/cover/banhmi-chai-1.png?raw=true" alt="Project Screenshot" width="500"/>
