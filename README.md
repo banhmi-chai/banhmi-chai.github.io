@@ -1,4 +1,4 @@
-# 💕 P&T Story
+# 🥖 Banh Mi & Chai ☕
 
 A quiet little story told in comic strips —  
 about the walks, the long calls,  
@@ -8,6 +8,6 @@ and the magical ones that linger long after. ✨
 Made with care, for someone special.
 
 With love,  
-**T → P** 💖
+**🥖 → ☕** 💖
 
 *Init 05/15/2025*
